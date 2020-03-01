@@ -1,0 +1,45 @@
+{% extends "home/base.html" %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/custom.css' %}">
+
+<div class="parallax"></div>
+
+<div class="home-content">
+
+
+
+    <div class="home-text">
+        <p>{{ language }}</p>
+        
+        <p>
+            Coen Wieman (1976) is sinds 1999 werkzaam als beeldend kunstenaar.
+            Hij heeft zich verdiept in de schilderkunst en legt zich toe op het maken van objecten.
+        </p>
+        <div class="mobile-whitespace"></div>
+        <p>In beide diciplines zoekt hij de grens tussen realisme en magie op, wat resulteert in sprookjesachtige
+            verbeeldingen tot aan fotografische fijnschilderkunst.</p>
+        <br>
+        <p>-------------------------------------------------------------</p>
+        <br>
+        <p>Wie zou er niet met Koning Willem-Alexander gezellig aan tafel willen zitten? Met dit bijzondere portret is
+            het mogelijk, u kunt tegenover hem plaatsnemen</p>
+        <div class="mobile-whitespace"></div>
+        <p>
+            Het unieke schilderij is 100 x 105 cm, € 3900,00. Het portret is ook te verkrijgen als giclée (artprint)
+            op canvas of op papier. De gecertificeerde luxe oplage op canvas is 10 stuks, 90 x 94 cm, € 395,00 per stuk.
+            De gecertificeerde oplage op papier is 25 stuks, 60 x 63,5 cm, € 195,00 per stuk (excl.verzendkosten).
+        </p>
+        <figure>
+            <img src='/media/images/pijlerpieper3_ps.jpg'>
+        </figure>
+        
+    </div>
+</div>
+
+
+
+
+{% endblock %}

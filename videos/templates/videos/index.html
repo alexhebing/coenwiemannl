@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'videos/custom.css' %}" />
+
+<div class="videos">
+    {% for video in videos %}
+    <p class="title">{{video.name}}</p>
+    {{video.get_video_frame | safe}}
+    {% if video.info_nl and language == 'nl' %}
+    <p>{{video.info_nl}}</p>
+    {% endif %}
+    {% if video.info_en and language == 'en' %}
+    <p>{{video.info_en}}</p>
+    {% endif %}    
+    <br>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

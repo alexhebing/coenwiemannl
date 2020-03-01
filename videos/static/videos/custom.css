@@ -1,0 +1,17 @@
+.videos {
+    max-width: 612px;
+    margin: 0 auto;
+}
+
+.videos iframe {
+    margin: 0 auto !important;
+    width: 100%;
+}
+
+#content .title {
+    color: #c8c8c8 !important;
+}
+
+#content p {
+    margin-top: 1em;
+}

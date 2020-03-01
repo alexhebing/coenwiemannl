@@ -1,0 +1,166 @@
+{% load static %}
+{% block extra_head_tags %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/png" href="/media/images/logo.png" />
+<link rel="stylesheet" type="text/css" href="{% static 'custom/bulma.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'custom/custom.css' %}">
+<script src="{% static 'custom/jquery-3.4.1.min.js' %}"></script>
+{% endblock %}
+
+<div class="main">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <figure>
+                <img class="image is-64x64" src=/media/images/logo.png> </figure> <span>COEN WIEMAN</span>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+        </div>
+
+        <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    Home
+                </a>
+
+                <a class="navbar-item" id="portraits">
+                    {% if language == 'nl' %}
+                    Portretten
+                    {% endif %}
+                    {% if language == 'en' %}
+                    Portraits
+                    {% endif %}
+                </a>
+
+                <a class="navbar-item" id="objects">
+                    {% if language == 'nl' %}
+                    Objecten
+                    {% endif %}
+                    {% if language == 'en' %}
+                    Objects
+                    {% endif %}
+                </a>
+
+                <a class="navbar-item" id="surreal">
+                    {% if language == 'nl' %}
+                    Surrealistisch
+                    {% endif %}
+                    {% if language == 'en' %}
+                    Surrealistic
+                    {% endif %}
+                </a>
+
+                <a class="navbar-item" id="real">
+                    {% if language == 'nl' %}
+                    Realistisch
+                    {% endif %}
+                    {% if language == 'en' %}
+                    Realistic
+                    {% endif %}
+                </a>
+
+                <a class="navbar-item" id="videos">
+                    Making of
+                </a>
+
+                <a class="navbar-item" id="expo">
+                    {% if language == 'nl' %}
+                    Expo / Opdrachten
+                    {% endif %}
+                    {% if language == 'en' %}
+                    Expositions
+                    {% endif %}
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                {% if language == 'en' %}
+                <a class="navbar-item" href="?language=nl">
+                    <img src="/media/images/nl.gif">
+                </a>
+                {% endif %}
+                {% if language == 'nl' %}
+                <a class="navbar-item" href="?language=en">
+                    <img src="/media/images/gb.gif">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/coenwieman" target="_blank">
+                    <img alt="Grey Facebook Icon"
+                        src="https://static.wixstatic.com/media/d3470ec8ca26475da4b228f0199b5d3d.png/v1/fill/w_27,h_27,al_c,q_95/d3470ec8ca26475da4b228f0199b5d3d.webp">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCoeByDW63J-V7EybDj24k2Q/" target="_blank">
+                    <img alt="Grey YouTube Icon"
+                        src="https://static.wixstatic.com/media/af037f3cc11741d1ada5c7f70d1074bf.png/v1/fill/w_27,h_27,al_c,q_95/af037f3cc11741d1ada5c7f70d1074bf.webp">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/cocebroeno/" target="_blank">
+                    <img alt="Grey Instagram Icon"
+                        src="https://static.wixstatic.com/media/d7ffe259c9e54f59837481b3dd0130eb.png/v1/fill/w_27,h_27,al_c,q_95/d7ffe259c9e54f59837481b3dd0130eb.webp">
+                </a>
+            </li>
+            <li>
+                <a href="mailto:info@coenwieman.nl" target="_self">
+                    <img alt="Email-icon"
+                        src="https://static.wixstatic.com/media/000295_daaa7bb92cc94c0faefd7a67d3463474~mv2.png/v1/fill/w_27,h_27,al_c,q_95/000295_daaa7bb92cc94c0faefd7a67d3463474~mv2.webp">
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    var language = "{{ language }}";
+    $(document).ready(function () {       
+        
+        $(".navbar-burger").click(function () {
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        });
+
+        function navigateWork(category) {
+            window.location.href = `/works/${category}/?language=${language}`;
+        }
+
+        $(`#sale`).click(function (e) {
+            navigateWork(`/for_sale`);
+        });
+        $(`#portraits`).click(function (e) {
+            navigateWork('portraits');
+        });
+        $(`#objects`).click(function (e) {
+            navigateWork('objects');
+        });
+        $(`#surreal`).click(function (e) {
+            navigateWork('surrealistic');
+        });
+        $(`#real`).click(function (e) {
+            navigateWork('realistic');
+        });
+        $(`#expo`).click(function (e) {
+            window.location.href = `/expo/?language=${language}`;
+        });
+        $(`#videos`).click(function (e) {
+            window.location.href = `/videos/?language=${language}`;
+        });
+    });
+</script>

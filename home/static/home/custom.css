@@ -1,0 +1,41 @@
+
+.parallax {
+    /* The image used */
+    background-image: url('/media/images/pijlerpieper3_ps.jpg');
+
+    /* Full height */
+    height: 77%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-content img {
+    margin: 0 auto;
+    display: block;
+}
+
+.home-text {
+    text-align: center;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+        height: 59%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-whitespace {
+        height: 12px;
+    }
+
+    .parallax {
+        height: 39%;
+    }
+}

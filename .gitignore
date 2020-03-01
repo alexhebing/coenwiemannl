@@ -1,0 +1,12 @@
+/prod_files
+/PhotoSwipe
+.htaccess
+*.sql
+*.sqlite3
+*.pyc
+/.env
+/.env38
+/.vscode
+/logs
+/media
+_models.py
