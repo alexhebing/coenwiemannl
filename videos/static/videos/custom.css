@@ -15,3 +15,7 @@
 #content p {
     margin-top: 1em;
 }
+
+a {    
+    margin-right: 5px !important;
+}

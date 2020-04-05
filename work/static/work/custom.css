@@ -1,4 +1,8 @@
 
+.pswp__caption__center {
+    text-align: center;
+}
+
 .pswp__caption__center p {
     font-size: large;
     margin: 5;
@@ -8,4 +12,9 @@
 .works {
     width: 85%;
     margin: 0 auto;
+}
+
+a {
+    font-size: large;
+    margin: 5;
 }

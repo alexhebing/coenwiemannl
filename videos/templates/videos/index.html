@@ -13,10 +13,22 @@
     {% endif %}
     {% if video.info_en and language == 'en' %}
     <p>{{video.info_en}}</p>
-    {% endif %}    
+    {% endif %}
     <br>
     {% endfor %}
+    {% if is_detail %}
+        {% if language == 'en' %} 
+        <a href="javascript:history.back()">Back to work</a>
+        <a href='/videos'>More 'making of' videos.</a>
+        {% endif %}
+        {% if language == 'nl' %} 
+        <a href="javascript:history.back()">Terug naar werk</a>
+        <a href='/videos'>Meer 'making of' videos.</a>
+        {% endif %}    
+    {% endif %}
 </div>
+
+
 
 
 {% endblock %}

@@ -65,3 +65,8 @@ body, .navbar, .navbar-menu {
     display: inline-block;
     padding: 6px;
 }
+
+a {
+    text-decoration: underline !important;
+    color: #c8c8c8 !important;
+}

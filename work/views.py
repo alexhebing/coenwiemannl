@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from videos.models import Video
 from .models import Work
 
 
@@ -81,8 +82,13 @@ def add_caption(work, request):
         caption = "{}&lt;p&gt;({})&lt;/p&gt;".format(caption, sold)
     else:
         add_caption_line(work, caption, for_sale, work.art_price)
+    
+    video = Video.objects.filter(work_id=work.pk).first()
+    if (video):
+        caption = "{}&lt;a href=/videos/?vid={}&gt;Making of&lt;/a&gt;".format(caption, video.pk)
+    
     work.caption = caption
-
+    
 
 def add_caption_line(work, caption, key, value):
     return "{}&lt;p&gt;&lt;b&gt;{}: &lt;/b&gt;{}&lt;/p&gt;".format(caption, key, value)

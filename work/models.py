@@ -35,7 +35,7 @@ class Type(models.Model):
         return 'UNKNOWN'
 
 
-class Work(models.Model):
+class Work(models.Model):    
     art_id = models.AutoField(primary_key=True)
     art_m_nr = models.IntegerField(blank=True, null=True)
     art_cat = models.ForeignKey(
@@ -78,6 +78,7 @@ class Work(models.Model):
     art_viewable = models.IntegerField(blank=True, null=True)
     art_view_location = models.CharField(max_length=255, blank=True, null=True)
     art_view_time = models.CharField(max_length=255, blank=True, null=True)
+    
 
     # custom prop for PIL instance
     pil_instance = None
