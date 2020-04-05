@@ -58,6 +58,7 @@ body, .navbar, .navbar-menu {
     background-color: #c8c8c8;
     color: #303030;
     padding: 1.5rem 1.5rem 2rem !important;
+    margin-top: 50px;
 }
 
 .footer li {
