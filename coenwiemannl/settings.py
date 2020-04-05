@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home',
     'videos',
     'language_utils',
+    'django_summernote',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

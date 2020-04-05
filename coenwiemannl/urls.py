@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^expo/', include('expo.urls')),
     url(r'^works/', include('work.urls')),
     url(r'^videos/', include('videos.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
