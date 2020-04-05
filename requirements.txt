@@ -5,9 +5,9 @@
 #    pip-compile
 #
 asgiref==3.2.3            # via django
-django-summernote==0.8.11.6
-django==3.0.2
-mysqlclient==1.4.2
-pillow==7.0.0
+django-summernote==0.8.11.6  # via -r requirements.in
+django==3.0.3             # via -r requirements.in, django-summernote
+mysqlclient==1.4.2        # via -r requirements.in
+pillow==7.0.0             # via -r requirements.in
 pytz==2019.3              # via django
 sqlparse==0.3.0           # via django
