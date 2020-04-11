@@ -14,12 +14,18 @@ body, .navbar, .navbar-menu {
     left: 0 !important;
 }
 
+@media only screen and (max-width: 1124px) {
+    .navbar-item {
+        font-size: 18px !important;
+    }
+}
+
 .navbar-brand {
     color:#c8c8c8 !important;
     margin-left: 13px;
 }
 
-.navbar-brand span {
+.coen {
     margin-top: 17px;
     margin-left: 17px;
     margin-right: 17px;
