@@ -49,3 +49,9 @@
         font-size: 1.1rem;
     }
 }
+
+.credits {
+    font-size: 0.8rem;
+    color: grey;
+    margin-left: 2em;
+}
