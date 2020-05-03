@@ -1,14 +1,15 @@
 {% extends "home/base.html" %}
 
-
 {% block content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/custom.css' %}">
 
-<div class="parallax"></div>
-
 <div class="home-content">
-    
+
+    <figure class="image is-5by-4">
+        <img src='/media/images/pijlerpieper3_ps.jpg'>
+    </figure>
+
     <div class="home-text">
         {% if language == 'nl' %}
         {{ home.text_nl | safe }}
@@ -16,14 +17,8 @@
         {% if language == 'en' %}
         {{ home.text_en | safe }}
         {% endif %}
-        <figure>
-            <img src='/media/images/pijlerpieper3_ps.jpg'>
-        </figure>
-        
+
     </div>
 </div>
-
-
-
 
 {% endblock %}
