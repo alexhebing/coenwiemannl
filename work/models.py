@@ -105,8 +105,12 @@ class Work(models.Model):
     def get_image_filepath(self):
         if self.art_filename:
             image = self.art_filename
-            if not image.name.startswith('images'):
-                image = "images/{}".format(image)
+            print(image)
+            if 'images' not in image.name:
+                if not image.name.startswith('/'):
+                   image = "/{}".format(image)
+                image = "images{}".format(image)
+            print(image)
             return image
 
     def get_image_width(self):

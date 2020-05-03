@@ -79,12 +79,12 @@
 <div class="works columns is-multiline">    
     {% for work in works %}
     <figure class="column is-4">
-        <a  href="/media/images/{{ work.art_filename }}" 
+        <a  href="/media/{{ work.get_image_filepath }}" 
             data-width="{{work.get_image_width}}"
             data-height="{{work.get_image_height}}" 
             data-index="{{ forloop.counter0 }}">
             <img 
-                src="/media/images/{{ work.art_filename }}"                 
+                src="/media/{{ work.get_image_filepath }}"                 
                 data-index="{{ forloop.counter0 }}" 
                 alt="{{ work.caption | safe}}" />
         </a>
