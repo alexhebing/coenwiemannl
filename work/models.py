@@ -61,7 +61,7 @@ class Work(models.Model):
     art_sold_to_date = models.DateTimeField(blank=True, null=True)
     art_sold_to_id = models.IntegerField(blank=True, null=True)
     art_filename = models.FileField(null=True, verbose_name='image', upload_to='images',
-                                    help_text='Merk op dat een plaatje op de website getoons wordt op de grootte die je upload (zie hieronder als voorbeeld)')
+                                    help_text='Merk op dat een plaatje op de website getoond wordt op de grootte die je upload (zie hieronder als voorbeeld)')
     art_publish = models.BooleanField(null=True, verbose_name='published?')
     art_designer = models.CharField(max_length=255, blank=True, null=True)
     art_artist = models.CharField(max_length=255, blank=True, null=True)
@@ -105,12 +105,10 @@ class Work(models.Model):
     def get_image_filepath(self):
         if self.art_filename:
             image = self.art_filename
-            print(image)
             if 'images' not in image.name:
                 if not image.name.startswith('/'):
                    image = "/{}".format(image)
                 image = "images{}".format(image)
-            print(image)
             return image
 
     def get_image_width(self):
