@@ -25,7 +25,6 @@ class WorkAdmin(admin.ModelAdmin):
         'art_price',
         'art_sold',
         'art_artist_worked_with',
-        'video'
     ]
     list_display = ['art_title_l1', 'art_date', 'art_publish']
     readonly_fields = ('admin_thumbnail',)
