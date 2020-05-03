@@ -76,3 +76,10 @@ a {
     text-decoration: underline !important;
     color: #c8c8c8 !important;
 }
+
+
+.credits {
+    font-size: 0.8rem;
+    color: grey;
+    margin-left: 2em;
+}
