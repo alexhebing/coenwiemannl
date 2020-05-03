@@ -12,6 +12,12 @@
                 <p class="title is-4">{{expo.expo_name}}</p>
                 <p class="subtitle is-6">{{expo.get_date_info}}</p>
 
+                {% if expo.expo_image %}
+                <figure class="image is-5by-4">
+                    <img style="width:256px;cursor:pointer;" src="/media/{{expo.get_image_filepath}}">
+                </figure>
+                {% endif %}
+
                 {% if expo.expo_info_l1 and language == 'nl' %}
                 <div class="content">
                     {{expo.expo_info_l1}}
@@ -28,4 +34,26 @@
     {% endfor %}
 </div>
 
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <figure class="image">
+            <img class='modal-image'>
+        </figure>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+<script>
+    $(`.image`).click(function (e) {
+        var image = e.target.src;
+        $('.modal-image').attr('src', image);
+        $('.modal').addClass('is-active');
+    });
+    $('.modal-close').click(function(e){
+        $('.modal').removeClass('is-active');
+    });
+</script>
+
 {% endblock %}
+
