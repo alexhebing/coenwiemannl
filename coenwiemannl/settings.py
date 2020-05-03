@@ -130,7 +130,7 @@ USE_I18N = True
 
 USE_L10N = False
 
-DATE_INPUT_FORMATS = ['%Y/%m/%d',]
+DATE_INPUT_FORMATS = ['%Y/%m/%d','%Y-%m-%d']
 
 USE_TZ = True
 
