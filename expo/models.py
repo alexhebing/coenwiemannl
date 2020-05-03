@@ -10,12 +10,12 @@ class Expo(models.Model):
     expo_name = models.CharField(max_length=255, null=True, verbose_name='name')
     expo_place_id = models.IntegerField(blank=True, null=True)
     expo_startdate = models.DateTimeField(null=True, verbose_name='start date')
-    expo_enddate = models.DateTimeField(null=True, verbose_name='end date')
+    expo_enddate = models.DateTimeField(null=True, verbose_name='end date', blank=True)
     expo_info_l1 = models.TextField(blank=True, null=True, verbose_name='info_nl')
     expo_info_l2 = models.TextField(blank=True, null=True, verbose_name='info_en')
     expo_publish = models.BooleanField(null=True, verbose_name='published?')
 
-    expo_image = models.FileField(null=True, verbose_name='image', upload_to='images',
+    expo_image = models.FileField(null=True, verbose_name='image', blank=True, upload_to='images',
                                     help_text='Op de website komt het plaatje eruit te zien zoals hieronder (qua grootte)')
 
     class Meta:
