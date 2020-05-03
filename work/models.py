@@ -52,7 +52,7 @@ class Work(models.Model):
     art_material_l2 = models.CharField(max_length=150, blank=True, null=True, verbose_name='materials_en')
     art_dimension = models.CharField(
         max_length=50, blank=True, null=True, verbose_name='dimension')
-    art_date = models.DateField(max_length=255, null=True, verbose_name='date')
+    art_date = models.DateField(max_length=255, null=True, verbose_name='date', help_text="In een van twee formaten: 'YYYY/MM/dd' of 'YYYY-MM-dd'")
     art_info_l1 = models.TextField(null=True, blank=True, verbose_name='info_nl')
     art_info_l2 = models.TextField(blank=True, null=True, verbose_name='info_en')
     art_price = models.CharField(
