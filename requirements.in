@@ -1,4 +1,4 @@
 django==3.*
 mysqlclient==1.*
-pillow==8.*
+pillow==9.*
 django-summernote
